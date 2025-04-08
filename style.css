@@ -1,3 +1,7 @@
+html {
+  --color-accent: oklch(65% 50% 0);
+}
+
 body {
   max-width: 100ch;
   line-height: 1.5;
@@ -40,8 +44,46 @@ nav li a:hover {
 
 /* contact form */
 
-input, textarea, button {
-  font: inherit;
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
+label, button {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* projects */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  column-gap: 1em;
+}
+
+article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+}
+
+h2 {
+  margin: 0;
+}
+h1 {
+  font-size: 400%;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
 
