@@ -87,3 +87,57 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
+
+/* resume */
+
+.resume {
+  padding-top: 0.3em;
+  line-height: 1;
+}
+
+.resume h1 {
+  font-size: 200%;
+}
+
+.resume h3 {
+  margin-bottom: 0em;
+}
+
+.resume section h2 {
+  border-bottom: 2px solid black;
+  margin-bottom: 0.8em;
+}
+
+.resume section ul {
+  margin: 0;
+  padding-left: 2ch;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.right-side {
+  margin-left: auto;
+  text-align: right;
+}
+
+/* resume header */
+
+.header header {
+  text-align: center;
+  padding: 1em;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+}
+
+.header, .education, .skills, .experience {
+  margin-bottom: 1em;
+}
+
