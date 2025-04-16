@@ -10,7 +10,7 @@ let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 for (let p of pages) {
-    const ARE_WE_HOME = document.documentElement.classList.contains('home');;
+    const ARE_WE_HOME = document.documentElement.classList.contains('home');
     let url = p.url;
     if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
