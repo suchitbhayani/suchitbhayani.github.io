@@ -14,7 +14,7 @@ for (let p of pages) {
     let title = p.title;
     const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
     ? "/"                  // Local server
-    : "/";                 // GitHub Pages repo name
+    : "/portfolio/";       // GitHub Pages repo name
     url = !url.startsWith('http') ? BASE_PATH + url : url;
     
     let a = document.createElement('a');
@@ -53,7 +53,6 @@ if ('colorScheme' in localStorage) {
 
 select.addEventListener('input', function (event) {
     let scheme = event.target.value;
-    console.log('color scheme changed to', scheme);
     document.documentElement.style.setProperty('color-scheme', scheme);
     localStorage.colorScheme = scheme;
 });
