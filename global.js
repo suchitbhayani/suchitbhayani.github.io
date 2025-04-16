@@ -1,8 +1,14 @@
+console.log('IT’S ALIVE!');
+
+function $$(selector, context = document) {
+  return Array.from(context.querySelectorAll(selector));
+}
+
 let pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/index.html', title: 'Projects' },
-    { url: 'resume/index.html', title: 'Resume'},
-    { url: 'contact/index.html', title: 'Contact'},
+    { url: 'projects/', title: 'Projects' },
+    { url: 'resume/', title: 'Resume'},
+    { url: 'contact/', title: 'Contact'},
     { url: 'https://github.com/suchitbhayani/', title: 'GitHub' }
 ];
 
@@ -11,7 +17,7 @@ document.body.prepend(nav);
 
 for (let p of pages) {
     const ARE_WE_HOME = document.documentElement.classList.contains('home');
-    let url = p.url;
+    let url = p.url;    
     if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
     }
