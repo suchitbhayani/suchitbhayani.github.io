@@ -1,8 +1,8 @@
 let pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'resume/', title: 'Resume'},
-    { url: 'contact/', title: 'Contact'},
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'resume/index.html', title: 'Resume'},
+    { url: 'contact/index.html', title: 'Contact'},
     { url: 'https://github.com/suchitbhayani/', title: 'GitHub' }
 ];
 
@@ -10,14 +10,12 @@ let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 for (let p of pages) {
+    const ARE_WE_HOME = document.documentElement.classList.contains('home');;
     let url = p.url;
-    console.log(url)
+    if (!ARE_WE_HOME && !url.startsWith('http')) {
+        url = '../' + url;
+    }
     let title = p.title;
-    const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? "/"                  // Local server
-    : "/";       // GitHub Pages repo name
-    url = !url.startsWith('http') ? BASE_PATH + url : url;
-    console.log(url)
     
     let a = document.createElement('a');
     a.href = url;
