@@ -1,33 +1,45 @@
 [
     {
-      "title": "Lorem ipsum dolor sit.",
+      "title": "Personalized AI Health Insights",
+      "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis itaque autem rerum. Consectetur, nulla a tenetur voluptate praesentium, molestiae doloremque soluta id earum qui eius at ex eveniet cum eligendi!"
+      "description": "Using Apple Watch data to provide users personalized health metrics and insights."
     },
     {
-      "title": "Placeat et nihil distinctio!",
+      "title": "Automated Feature Engineering",
+      "year": "2025",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Totam rerum tenetur unde odio, quas autem laudantium accusamus libero tempore ab quibusdam? Harum voluptatibus possimus sapiente itaque aliquid, quos ex a aliquam? Eaque ullam, asperiores possimus porro doloremque doloribus!"
+      "description": "Leveraging LLMs to fully automate the process of feature engineering and selection."
     },
     {
-      "title": "Nulla asperiores aspernatur nisi!",
+      "title": "Recipe Recommender System",
+      "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Minima quidem mollitia dignissimos! Minima, praesentium amet omnis odit eveniet itaque, illo cupiditate officia obcaecati, error magni aut fugiat pariatur ut. Obcaecati accusantium in nulla voluptas commodi natus sed sapiente!"
+      "description": "Classifier and recommender system for personalized recipe suggestions."
     },
     {
-      "title": "Nobis aliquid incidunt veniam!",
+      "title": "Language Modeling",
+      "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Quas animi incidunt inventore, eum optio amet laboriosam quos, nobis totam repudiandae mollitia sed recusandae officiis ut provident saepe! Ex, hic distinctio? Ut aut nisi dolor sunt voluptatibus dolorem repellendus."
+      "description": "Text generation using probabilistic language models."
     },
     {
-      "title": "Itaque adipisci dolorum sunt!",
+      "title": "Psychtweets",
+      "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Voluptate porro saepe illo? Optio praesentium, facilis magni, dolorem reiciendis quibusdam numquam saepe iure esse dolorum vel excepturi ipsam. Sequi voluptatum illo, culpa quaerat commodi harum dignissimos odit voluptatibus expedita."
+      "description": "Deep neural network to predict user MBTI type from their tweets."
     },
     {
-      "title": "Perferendis voluptas reiciendis consequatur!",
+      "title": "Medical Insurance Cost Modeling",
+      "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Officiis fuga nam esse nihil quisquam iste, quo culpa, animi aliquid eos nisi soluta ad, non iure vel sit explicabo doloribus praesentium corrupti impedit? Nobis ratione non adipisci alias suscipit?"
+      "description": "  ML model to predict health insurance costs."
+    },
+    {
+      "title": "LeBron vs. Jordan",
+      "year": "2023",
+      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "description": "Using data science and statistics to settle the NBA GOAT debate."
     },
     {
       "title": "Laudantium non ullam temporibus.",
@@ -53,10 +65,5 @@
       "title": "Aliquam quia dolorum accusantium!",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
       "description": "Rerum inventore consequuntur tempora voluptatem. Asperiores magnam odit neque illo minus impedit nihil accusamus, explicabo exercitationem est? A sit ipsum, beatae aperiam nesciunt dignissimos laboriosam? Porro sequi suscipit a quisquam?"
-    },
-    {
-      "title": "Impedit minus provident voluptates.",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Aliquam explicabo deserunt excepturi at architecto unde velit quia fugit. Voluptate adipisci accusantium quia culpa, quos tenetur quibusdam quod ea nam veritatis, quaerat aspernatur consequatur quo consectetur est. Voluptatibus, nihil?"
     }
   ]
