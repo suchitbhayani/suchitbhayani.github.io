@@ -146,3 +146,46 @@ h1, h2, h3, h4, h5, h6 {
   right: 1rem;
   font-size: 80%;
 }
+
+
+/* home page stats */
+
+#profile-stats {
+  width: 100%;
+  max-width: none;
+  margin: 2em 0;
+  text-align: left;
+  padding: 0;
+}
+
+#profile-stats h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: left; /* Align title to the left */
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Keeps four equal columns */
+  text-align: left;
+  gap: 0.5em 1em;
+  width: 100%; /* Ensure the grid takes full width */
+}
+
+#profile-stats dt {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+  grid-row: 1;
+  text-align: left;
+}
+
+#profile-stats dd {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  grid-row: 2;
+  text-align: left;
+}

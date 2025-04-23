@@ -77,7 +77,6 @@ export async function fetchJSON(url) {
 }
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
-    // Your code will go here
     containerElement.innerHTML = '';
     
     project.forEach(project => {
@@ -90,4 +89,10 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         containerElement.appendChild(article);
     });
 };
+
+
+// function for github stats
+export async function fetchGitHubData(username) {
+    return fetchJSON(`https://api.github.com/users/${username}`);
+} 
   
