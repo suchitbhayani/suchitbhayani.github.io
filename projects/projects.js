@@ -32,23 +32,55 @@ function renderPieChart(projectsGiven) {
     let newArcData = newSliceGenerator(newData);
     let newArcs = newArcData.map((d) => arcGenerator(d));
 
-    // clear up the previous chart and legend
-    d3.select('svg').selectAll('path').remove();
-    d3.select('.legend').selectAll('li').remove();
+    let selectedIndex = -1;
+    let svg = d3.select('svg');
+    let legend = d3.select('.legend');
+    let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
-    //  render the new chart and legend
+    svg.selectAll('path').remove();
+    legend.selectAll('li').remove();
+ 
     newArcs.forEach((arc, idx) => {
-        d3.select('svg')
+        svg
           .append('path')
           .attr('d', arc)
-          .attr('fill', colors(idx));
+          .attr('fill', colors(idx))
+          .on('click', () => {
+            selectedIndex = selectedIndex === idx ? -1 : idx;
+
+            if (selectedIndex === -1) {
+                renderProjects(projects, projectsContainer, 'h2');
+              } else {
+                let selectedYear = newData[selectedIndex].label;
+                let filteredProjects = projects.filter(
+                    (project) => project.year === selectedYear
+                );
+                renderProjects(filteredProjects, projectsContainer, 'h2');
+            }
+
+            svg
+                .selectAll('path')
+                .attr('class', (_, idx) => (
+                    idx === selectedIndex ? 'selected' : ''
+                ));
+            legend
+                .selectAll('li')
+                .attr('class', (_, idx) => (
+                    idx === selectedIndex ? 'selected' : ''
+                ));
+
+            
+        });
     });
+
+
     newData.forEach((d, idx) => {
         legend.append('li')
             .attr('class', 'legend-item')
             .attr('style', `--color:${colors(idx)}`)
             .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
     });
+
 }
 
 renderPieChart(projects);
@@ -69,4 +101,7 @@ searchInput.addEventListener('input', (event) => {
     renderProjects(filteredProjects, projectsContainer, 'h2');
     renderPieChart(filteredProjects);
 });
+
+let selectedIndex = -1;
+
 
