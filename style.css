@@ -189,3 +189,49 @@ h1, h2, h3, h4, h5, h6 {
   grid-row: 2;
   text-align: left;
 }
+
+
+/* pie chart */
+
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+.swatch {
+  width: 15px;  /* Set width */
+  height: 15px;  /* Set height */
+  aspect-ratio: 1 / 1;  /* Ensures it's a square */
+  background-color: var(--color);  /* Uses a CSS variable for dynamic colors */
+  border-radius: 3px;  /* Slight rounding of corners */
+  display: inline-block;  /* Allows width & height to take effect */
+  margin-right: 10px;  /* Space between the swatch and text */
+}
+ 
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 10px; /* Adds spacing between legend items */
+  padding: 0;
+  list-style: none; /* Removes default bullet points */
+  border: 1px solid #ccc;  /* Adds a light gray border */
+  padding: 10px;  /* Adds padding inside the border */
+  margin: auto; /* Centers the legend */
+}
+
+.legend-item {
+  display: flex; /* Aligns swatch and text horizontally */
+  align-items: center; /* Vertically centers swatch and text */
+  gap: 5px; /* Adds space between swatch and text */
+}
+
+.container {
+  display: flex;  /* Arrange pie chart and legend in a row */
+  align-items: center;  /* Center content horizontally */
+  gap: 20px;  /* Add space between pie chart and legend */
+}
+
+.legend {
+  flex: 1;
+}
