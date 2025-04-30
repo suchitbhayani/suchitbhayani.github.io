@@ -96,7 +96,7 @@ searchInput.addEventListener('input', (event) => {
     // update query value
     query = event.target.value;
     // filter projects
-    let filteredProjects = projects.filter((project) => {
+    filteredProjects = projects.filter((project) => {
     let values = Object.values(project).join('\n').toLowerCase();
         return values.includes(query.toLowerCase());
     })
