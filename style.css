@@ -304,3 +304,15 @@ path {
   grid-row: 2;
   text-align: left;
 }
+
+/* Make gridlines subtle */
+.gridlines line {
+  stroke: #ddd; /* Light gray color */
+  stroke-opacity: 0.6; /* Make them slightly transparent */
+  shape-rendering: crispEdges; /* Ensures clean, sharp lines */
+}
+
+/* Remove extra ticks at the ends of the gridlines */
+.gridlines path {
+  display: none;
+} 
