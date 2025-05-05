@@ -316,3 +316,52 @@ path {
 .gridlines path {
   display: none;
 } 
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr; /* First column auto-sized, second column flexible */
+  gap: 0.5em 1em; /* Adjust spacing */
+  align-items: start; /* Aligns text to the top */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  font-weight: bold;
+  color: #666; /* Makes labels less prominent */
+  text-transform: uppercase;
+}
+
+dl.info dd {
+  margin: 0; /* Removes default margin */
+  font-weight: normal; /* Keeps values normal weight */
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+#commit-tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle elevation effect */
+  border-radius: 8px; /* Rounded corners */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 10px; /* Spacing inside the tooltip */
+  font-size: 14px;
+  color: black;
+}

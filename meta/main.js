@@ -21,7 +21,7 @@ function processCommits() {
         let { author, date, time, timezone, datetime } = first;
         let ret = {
             id: commit,
-            url: 'https://github.com/vis-society/lab-7/commit/' + commit,
+            url: 'https://github.com/suchitbhayani/portfolio/commit/' + commit,
             author,
             date,
             time,
@@ -101,7 +101,17 @@ function renderScatterPlot(data, commits) {
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
         .attr('r', 5)
-        .attr('fill', 'steelblue');
+        .attr('fill', 'steelblue')
+        .on('mouseenter', (event, commit) => {
+            renderTooltipContent(commit);
+            updateTooltipVisibility(true);
+            updateTooltipPosition(event);
+        })
+        .on('mouseleave', () => {
+            updateTooltipVisibility(false);
+        });
+
+
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
     const usableArea = {
         top: margin.top,
@@ -141,10 +151,41 @@ function renderScatterPlot(data, commits) {
     .attr('transform', `translate(${usableArea.left}, 0)`)
     .call(yAxis);
     
-
 }
 
 let data = await loadData();
 let commits = processCommits(data);
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
+
+function renderTooltipContent(commit) {
+    const link = document.getElementById('commit-link');
+    const date = document.getElementById('commit-date');
+    const lines = document.getElementById('commit-lines');
+    const author = document.getElementById('commit-author');
+    const time = document.getElementById('commit-time');
+  
+    if (Object.keys(commit).length === 0) return;
+  
+    link.href = commit.url;
+    link.textContent = commit.id;
+    date.textContent = commit.datetime?.toLocaleString('en', {
+      dateStyle: 'full',
+    });
+    lines.textContent = commit.totalLines;
+    author.textContent = commit.author;
+    time.textContent = commit.time;
+}
+
+function updateTooltipVisibility(isVisible) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.hidden = !isVisible;
+}
+
+function updateTooltipPosition(event) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+}
+  
+  
