@@ -1,4 +1,4 @@
-name: Deploy with Code Stats
+name: Deploy
 
 on:
   push:
