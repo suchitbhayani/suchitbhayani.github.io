@@ -1,12 +1,12 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
-let xScale = "";
-let yScale = "";
+let xScale;
+let yScale;
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
       ...row,
-      line: Number(row.line), // or just +row.line
+      line: Number(row.line), 
       depth: Number(row.depth),
       length: Number(row.length),
       date: new Date(row.date + 'T00:00' + row.timezone),
@@ -67,7 +67,7 @@ function renderCommitInfo(data, commits) {
   let averageFileLength = d3.mean(
       d3.groups(data, d => d.file)
       .map(([file, lines]) => lines.length)
-  ); // Count number of lines
+  );
   dl.append('dd').text(averageFileLength.toFixed(2));
 
   // Add file with the max file length
@@ -75,9 +75,9 @@ function renderCommitInfo(data, commits) {
   let maxFileLength = d3.max(
       d3.groups(data, d => d.file)
       .map(([file, lines]) => lines.length)
-  ); // Find max count of lines
+  );
   let maxFile = d3.groups(data, d => d.file)
-                  .find(([file, lines]) => lines.length == maxFileLength)[0]; // Find the file with max lines
+                  .find(([file, lines]) => lines.length == maxFileLength)[0];
   dl.append('dd').text(maxFile + ' (' + maxFileLength + ')');
 }
 
@@ -106,33 +106,33 @@ function renderScatterPlot(data, commits) {
   yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
   const dots = svg.append('g').attr('class', 'dots');
   dots
-      .selectAll('circle')
-      .data(sortedCommits)
-      .join('circle')
-      .attr('cx', (d) => xScale(d.datetime))
-      .attr('cy', (d) => yScale(d.hourFrac))
-      .attr('r', (d) => rScale(d.totalLines))
-      .style('fill-opacity', 0.7) // Add transparency for overlapping dots
-      .on('mouseenter', (event, commit) => {
-          d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
-          renderTooltipContent(commit);
-          updateTooltipVisibility(true);
-          updateTooltipPosition(event);
-      })
-          .on('mouseleave', (event) => {
-          d3.select(event.currentTarget).style('fill-opacity', 0.7);
-          updateTooltipVisibility(false);
-      });
+    .selectAll('circle')
+    .data(sortedCommits)
+    .join('circle')
+    .attr('cx', (d) => xScale(d.datetime))
+    .attr('cy', (d) => yScale(d.hourFrac))
+    .attr('r', (d) => rScale(d.totalLines))
+    .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+    .on('mouseenter', (event, commit) => {
+      d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
+      renderTooltipContent(commit);
+      updateTooltipVisibility(true);
+      updateTooltipPosition(event);
+    })
+      .on('mouseleave', (event) => {
+      d3.select(event.currentTarget).style('fill-opacity', 0.7);
+      updateTooltipVisibility(false);
+    });
 
-
+  // margins
   const margin = { top: 10, right: 10, bottom: 30, left: 20 };
   const usableArea = {
-      top: margin.top,
-      right: width - margin.right,
-      bottom: height - margin.bottom,
-      left: margin.left,
-      width: width - margin.left - margin.right,
-      height: height - margin.top - margin.bottom,
+    top: margin.top,
+    right: width - margin.right,
+    bottom: height - margin.bottom,
+    left: margin.left,
+    width: width - margin.left - margin.right,
+    height: height - margin.top - margin.bottom,
   };
 
   // gridlines
@@ -140,30 +140,25 @@ function renderScatterPlot(data, commits) {
       .append('g')
       .attr('class', 'gridlines')
       .attr('transform', `translate(${usableArea.left}, 0)`);
-
-  // Create gridlines as an axis with no labels and full-width ticks
   gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
-  // Update scales with new ranges
+  // update scales
   xScale.range([usableArea.left, usableArea.right]);
   yScale.range([usableArea.bottom, usableArea.top]);
-  // Create the axes
+  
+  // axes
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale).tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
-  // Add X axis
   svg
-      .append('g')
-      .attr('transform', `translate(0, ${usableArea.bottom})`)
-      .call(xAxis);
-
-  // Add Y axis
+    .append('g')
+    .attr('transform', `translate(0, ${usableArea.bottom})`)
+    .call(xAxis);
   svg
-      .append('g')
-      .attr('transform', `translate(${usableArea.left}, 0)`)
-      .call(yAxis);
+    .append('g')
+    .attr('transform', `translate(${usableArea.left}, 0)`)
+    .call(yAxis);
 
   createBrushSelector(svg);
-  
 }
 
 let data = await loadData();
