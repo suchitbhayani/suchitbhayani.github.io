@@ -2,28 +2,28 @@
     {
       "title": "Personalized AI Health Insights",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/apple_watch.png",
       "description": "Using Apple Watch data to provide users personalized health metrics and insights.",
       "link": "https://github.com/CarterT27/Apple-Watch-Personalized-Health-Insights"
     },
     {
       "title": "Automated Feature Engineering",
       "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/feature_engineering.png",
       "description": "Leveraging LLMs to fully automate the process of feature engineering and selection.",
       "link": "https://github.com/CarterT27/FASTER"
     },
     {
       "title": "Recipe Recommender System",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/recipe.png",
       "description": "Classifier and recommender system for personalized recipe suggestions.",
       "link": "https://ryancao2005.github.io/Recipe-Recommender-System/"
     },
     {
       "title": "Language Modeling",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/language_modeling.png",
       "description": "Text generation using probabilistic language models.",
       "link": "https://github.com/suchitbhayani/Language-Modeling"
     },
