@@ -30,7 +30,7 @@
     {
       "title": "Psychtweets",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/psychtweets.png",
       "description": "Deep neural network to predict user MBTI type from their tweets.",
       "link": "https://github.com/suchitbhayani/Psychtweets"
     },
