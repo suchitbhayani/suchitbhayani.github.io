@@ -2,73 +2,57 @@
     {
       "title": "Personalized AI Health Insights",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Using Apple Watch data to provide users personalized health metrics and insights."
+      "image": "../images/apple_watch.png",
+      "description": "Using Apple Watch data to provide users personalized health metrics and insights.",
+      "link": "https://github.com/CarterT27/Apple-Watch-Personalized-Health-Insights"
     },
     {
       "title": "Automated Feature Engineering",
       "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Leveraging LLMs to fully automate the process of feature engineering and selection."
+      "image": "../images/feature_engineering.png",
+      "description": "Leveraging LLMs to fully automate the process of feature engineering and selection.",
+      "link": "https://github.com/CarterT27/FASTER"
     },
     {
       "title": "Recipe Recommender System",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Classifier and recommender system for personalized recipe suggestions."
+      "image": "../images/recipe.png",
+      "description": "Classifier and recommender system for personalized recipe suggestions.",
+      "link": "https://ryancao2005.github.io/Recipe-Recommender-System/"
     },
     {
       "title": "Language Modeling",
       "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Text generation using probabilistic language models."
+      "image": "../images/language_modeling.png",
+      "description": "Text generation using probabilistic language models.",
+      "link": "https://github.com/suchitbhayani/Language-Modeling"
     },
     {
       "title": "Psychtweets",
       "year": "2024",
+      "image": "../images/psychtweets.png",
+      "description": "Deep neural network to predict user MBTI type from their tweets.",
+      "link": "https://github.com/suchitbhayani/Psychtweets"
+    },
+    {
+      "title": "Bikewatching",
+      "year": "2025",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Deep neural network to predict user MBTI type from their tweets."
+      "description": "Data visualization of bikers in the greater Boston area.",
+      "link": "https://github.com/suchitbhayani/bikewatching"
     },
     {
       "title": "Medical Insurance Cost Modeling",
       "year": "2024",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "  ML model to predict health insurance costs."
+      "description": "  ML model to predict health insurance costs.",
+      "link": "https://github.com/suchitbhayani/Medical-Insurance-Cost"
     },
     {
       "title": "LeBron vs. Jordan",
       "year": "2023",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Using data science and statistics to settle the NBA GOAT debate."
-    },
-    {
-      "title": "Laudantium non ullam temporibus.",
-      "year": "2005",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Placeat cum quas numquam est? Veniam quasi maxime obcaecati eos fugit laboriosam nostrum labore modi rem nihil veritatis repudiandae sequi est deserunt atque, eum quo, aspernatur aliquam quas expedita officia."
-    },
-    {
-      "title": "Quaerat quam dolores delectus?",
-      "year": "2005",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Accusantium, culpa. Ratione delectus quae alias ad nulla, quo recusandae dicta assumenda doloremque eum, eveniet, animi officia temporibus praesentium neque sint odio voluptatibus consequuntur vel itaque tenetur error perferendis iusto!"
-    },
-    {
-      "title": "Repellat necessitatibus pariatur consequatur?",
-      "year": "2005",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Provident, dicta. Labore, rerum vero! Nostrum excepturi, consequuntur repudiandae quaerat quia, corporis quae at nobis quam deleniti impedit quod nihil dolore voluptatum magnam id iure veniam eius doloribus asperiores sapiente."
-    },
-    {
-      "title": "Enim eaque praesentium nulla!",
-      "year": "2005",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Perspiciatis exercitationem placeat vel? Soluta sit aperiam molestiae voluptas harum blanditiis fuga et expedita, voluptates, asperiores dolorem, ipsum temporibus incidunt. Molestiae inventore voluptatum temporibus sapiente doloremque tenetur? Quaerat, dicta velit!"
-    },
-    {
-      "title": "Aliquam quia dolorum accusantium!",
-      "year": "2005",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Rerum inventore consequuntur tempora voluptatem. Asperiores magnam odit neque illo minus impedit nihil accusamus, explicabo exercitationem est? A sit ipsum, beatae aperiam nesciunt dignissimos laboriosam? Porro sequi suscipit a quisquam?"
+      "description": "Using data science and statistics to settle the NBA GOAT debate.",
+      "link": "https://github.com/suchitbhayani/LeBron-and-Jordan-Playoff-vs.-Regular-Season-Performance-Analysis"
     }
   ]
