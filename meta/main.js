@@ -313,6 +313,7 @@ function renderLanguageBreakdown(selection) {
 }
 
 function updateFileInfo(filteredCommits) {
+  let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
   let lines = filteredCommits.flatMap((d) => d.lines);
   let files = [];
   files = d3
@@ -320,6 +321,7 @@ function updateFileInfo(filteredCommits) {
     .map(([name, lines]) => {
       return { name, lines };
     });
+  files = d3.sort(files, (d) => -d.lines.length);
 
   d3.select('.files').selectAll('div').remove(); // Clear previous content
 
@@ -335,4 +337,12 @@ function updateFileInfo(filteredCommits) {
 
   filesContainer.append('dd')
     .text(d => `${d.lines.length} lines`);  // Set line count text
+  
+  filesContainer.append('dd')
+    .selectAll('div')
+    .data(d => d.lines)  // Bind each line in the file
+    .enter()
+    .append('div')
+    .attr('class', 'line')
+    .style('background', d => fileTypeColors(d.type));;  // Set class attribute
 }
