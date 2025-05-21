@@ -166,6 +166,21 @@ let commits = processCommits(data);
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 
+let commitProgress = 100;
+let timeScale = d3.scaleTime(
+  [d3.min(commits, (d) => d.datetime), d3.max(commits, (d) => d.datetime)],
+  [0, 100],
+);
+let commitMaxTime = timeScale.invert(commitProgress);
+
+const slider = document.getElementById('commit-slider');
+const selectedTime = document.getElementById('selectedTime');
+slider.addEventListener('input', () => {
+  commitProgress = +slider.value;
+  commitMaxTime = timeScale.invert(commitProgress);
+  selectedTime.textContent = commitMaxTime.toLocaleString();
+});
+
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
   const date = document.getElementById('commit-date');

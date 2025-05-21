@@ -17,6 +17,14 @@
     <div id="stats"></div>
 
     <h2>Commits by time of day</h2>
+
+    <div id="slider-container" style="display: flex; align-items: baseline; margin-bottom: 1em;">
+        <label style="flex: 1;">Show commits until:
+            <input type="range" id="commit-slider" min="0" max="100" value="100" style="width: 80%;">
+        </label>
+        <time id="selectedTime" style="margin-left: auto;">Loading...</time>
+    </div>
+
     <div id="chart"></div>
 
     <dl id="commit-tooltip" class="info tooltip" hidden>
@@ -28,7 +36,6 @@
         <dt>Date</dt>
         <dd id="commit-date"></dd>
       
-        <!-- Add: Time, author, lines edited -->
         <dt>Time</dt>
         <dd id="commit-time"></dd>
 

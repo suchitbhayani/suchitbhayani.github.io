@@ -387,3 +387,60 @@ circle.selected {
   font-size: 1.2em;
   grid-row: 2; /* Ensures all dd elements stay in the second row */
 }
+
+#slider-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+#commit-slider {
+  flex: 1;
+  appearance: none;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+#commit-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0053e7;
+  cursor: pointer;
+}
+
+#commit-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0053e7;
+  cursor: pointer;
+}
+
+#selectedTime {
+  min-width: 200px;
+  text-align: right;
+  color: #333;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.stats dt {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.stats dd {
+  margin: 0;
+  padding-right: 20px;
+}
+
