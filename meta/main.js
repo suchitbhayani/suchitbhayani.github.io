@@ -346,3 +346,55 @@ function updateFileInfo(filteredCommits) {
     .attr('class', 'line')
     .style('background', d => fileTypeColors(d.type));;  // Set class attribute
 }
+
+let NUM_ITEMS = 45; // Ideally, let this value be the length of your commit history
+let ITEM_HEIGHT = 100; // Feel free to change
+let VISIBLE_COUNT = 100; // Feel free to change as well
+let totalHeight = (NUM_ITEMS - 1) * ITEM_HEIGHT;
+const scrollContainer = d3.select('#scroll-container');
+const spacer = d3.select('#spacer');
+spacer.style('height', `${totalHeight}px`);
+const itemsContainer = d3.select('#items-container');
+
+scrollContainer.on('scroll', () => {
+  const scrollTop = scrollContainer.property('scrollTop');
+  let startIndex = Math.floor(scrollTop / ITEM_HEIGHT);
+  startIndex = Math.max(
+    0,
+    Math.min(startIndex, commits.length - VISIBLE_COUNT),
+  );
+  renderItems(startIndex);
+});
+renderItems(0);
+
+function renderItems(startIndex) {
+  // Clear things off
+  itemsContainer.selectAll('div').remove();
+  const endIndex = Math.min(startIndex + VISIBLE_COUNT, commits.length);
+  let newCommitSlice = commits.slice(startIndex, endIndex);
+
+  // Re-bind the commit data to the container and represent each using a div
+  itemsContainer.selectAll('div')
+    .data(newCommitSlice)
+    .enter()
+    .append('div')
+    .style('position', 'absolute')
+    .style('top', (_, idx) => `${idx * ITEM_HEIGHT}px`)
+    .each(function(commit, index) {
+      // Construct narrative HTML content
+      let commitDate = new Date(commit.datetime);
+      let dateStr = commitDate.toLocaleString("en", { dateStyle: "full", timeStyle: "short" });
+
+      let fileCount = d3.rollups(commit.lines, d => d.length, d => d.file).length;
+      let message = index > 0 ? 'another glorious commit' : 'my first commit, and it was glorious';
+
+      d3.select(this).append('p')
+        .html(`
+          On ${dateStr}, I made
+          <a href="${commit.url}" target="_blank">${message}</a>.
+          I edited ${commit.totalLines} lines across ${fileCount} files.
+          Then I looked over all I had made, and I saw that it was very good.
+        `);
+    });
+}
+
