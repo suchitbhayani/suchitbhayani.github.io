@@ -163,6 +163,7 @@ function updateScatterPlot(data, filteredCommits) {
     .call(yAxis);
 
   createBrushSelector(svg);
+  
 }
 
 let data = await loadData();
@@ -184,6 +185,7 @@ d3.select('#commit-slider').on('input', function(event) {
   filteredData = filterDataByTime(data, commitMaxTime)
   updateScatterPlot(filteredData, filteredCommits);
   updateCommitInfo(filteredData, filteredCommits);
+  updateFileInfo(filteredCommits);
 });
 
 function filterCommitsByTime(commits, commitMaxTime) {
@@ -195,6 +197,7 @@ function filterDataByTime(data, commitMaxTime) {
   
 updateCommitInfo(data, filteredCommits);
 updateScatterPlot(data, filteredCommits);
+updateFileInfo(filteredCommits);
 
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
@@ -307,4 +310,29 @@ function renderLanguageBreakdown(selection) {
             <dd>${count} lines (${formatted})</dd>
         `;
   }
+}
+
+function updateFileInfo(filteredCommits) {
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = [];
+  files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    });
+
+  d3.select('.files').selectAll('div').remove(); // Clear previous content
+
+  let filesContainer = d3.select('.files')
+    .selectAll('div')
+    .data(files)
+    .enter()
+    .append('div');
+
+  filesContainer.append('dt')
+    .append('code')
+    .text(d => d.name);  // Set file name inside <code>
+
+  filesContainer.append('dd')
+    .text(d => `${d.lines.length} lines`);  // Set line count text
 }
