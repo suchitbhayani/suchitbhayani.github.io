@@ -22,7 +22,6 @@
             <div id="spacer"></div>
             <div id="items-container"></div>
         </div>
-        <!-- our old scatterplot div -->
         <div id="chart"></div>
     </div>
 
@@ -47,13 +46,22 @@
     </dl>
 
     <dl class="files">
-        <!-- we want the following structure for each file-->
         <div>
             <dt><code>{file.name}</code></dt>
             <dd>{file.lines.length} lines</dd>
         </div>
         <div>...</div>
     </dl>
+
+    <div id="scrollytelling-2">
+        <!-- Left: scrollable narrative items (sorted by longestLine) -->
+        <div id="scroll-container-2">
+        <div id="spacer-2"></div>
+        <div id="items-container-2"></div>
+        </div>
+        <!-- Right: Unit visualization for longestLine -->
+        <div id="files-longest" class="files"></div>
+    </div>
     
     <p id="selection-count">No commits selected</p>
     <dl id="language-breakdown" class="stats"></dl>

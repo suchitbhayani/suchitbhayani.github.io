@@ -48,7 +48,7 @@ function processCommits() {
           writable: false,    // Prevent accidental modification
           configurable: false // Prevent deletion or reconfiguration
       });
-
+      ret.longestLine = d3.max(lines, d => d.length) || 0;
       return ret;
       });
 }
@@ -170,7 +170,7 @@ function updateScatterPlot(data, filteredCommits) {
 }
 
 let data = await loadData();
-let commits = processCommits(data);
+let commits = processCommits();
 
 updateCommitInfo(data, commits);
 updateScatterPlot(data, commits);
@@ -289,6 +289,7 @@ function renderLanguageBreakdown(selection) {
   }
 }
 
+// first scrollytelling
 function updateFileInfo(filteredCommits) {
   let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
   let lines = filteredCommits.flatMap((d) => d.lines);
@@ -300,7 +301,7 @@ function updateFileInfo(filteredCommits) {
     });
   files = d3.sort(files, (d) => -d.lines.length);
 
-  d3.select('.files').selectAll('div').remove(); // Clear previous content
+  d3.select('.files').selectAll('div').remove();
 
   let filesContainer = d3.select('.files')
     .selectAll('div')
@@ -322,9 +323,44 @@ function updateFileInfo(filteredCommits) {
     .append('div')
     .attr('class', 'line')
     .style('background', d => fileTypeColors(d.type));;  // Set class attribute
+  }
+
+function renderItems(startIndex) {
+  itemsContainer.selectAll('div').remove();
+  const endIndex = Math.min(startIndex + VISIBLE_COUNT, commits.length);
+  const newCommitSlice = commits.slice(startIndex, endIndex);
+
+  let filteredCommits = commits.slice(0, endIndex);
+  let endDateTime = commits[endIndex - 1].datetime
+  let filteredData = data.filter(d => d.datetime <= endDateTime);
+
+  updateCommitInfo(filteredData, filteredCommits);
+  updateScatterPlot(data, filteredCommits);
+  updateFileInfo(filteredCommits); // also add to 2nd scrollytelling
+
+  itemsContainer.selectAll('div')
+    .data(newCommitSlice)
+    .enter()
+    .append('div')
+    .classed('item', true)
+    .style('position', 'absolute')
+    .style('top', (_, idx) => `${(startIndex + idx) * ITEM_HEIGHT}px`)
+    .each(function(commit, index) {
+      const commitDate = new Date(commit.datetime);
+      const dateStr = commitDate.toLocaleString("en", { dateStyle: "full", timeStyle: "short" });
+      const fileCount = d3.rollups(commit.lines, d => d.length, d => d.file).length;
+      const message = index > 0 ? 'another glorious commit' : 'my first commit, and it was glorious';
+
+      d3.select(this).append('p').html(`
+        On ${dateStr}, I made
+        <a href="${commit.url}" target="_blank">${message}</a>.
+        I edited ${commit.totalLines} lines across ${fileCount} files.
+        Then I looked over all I had made, and I saw that it was very good.
+      `);
+    });
 }
 
-let NUM_ITEMS = 45; // Length of commit history
+let NUM_ITEMS = 45;
 let ITEM_HEIGHT = 100;
 let VISIBLE_COUNT = 3;
 let totalHeight = NUM_ITEMS * ITEM_HEIGHT;
@@ -342,38 +378,69 @@ scrollContainer.on('scroll', () => {
 
 renderItems(0);
 
-function renderItems(startIndex) {
-  itemsContainer.selectAll('div').remove();
-  const endIndex = Math.min(startIndex + VISIBLE_COUNT, commits.length);
-  const newCommitSlice = commits.slice(startIndex, endIndex);
+// second scrollytelling
+const lineColor = d3.scaleOrdinal(d3.schemeTableau10);
+const ITEM_HEIGHT_2 = 80;
+let scrollContainer2Sel = d3.select('#scroll-container-2');
+let itemsContainer2Sel = d3.select('#items-container-2');
+let scrollyLongestData = [...commits].sort((a, b) => a.longestLine - b.longestLine);
+scrollyLongestData.forEach((c, i) => c._indexLongest = i);
+d3.select('#spacer-2').style('height', (scrollyLongestData.length * ITEM_HEIGHT_2) + 'px');
+scrollContainer2Sel.on('scroll', renderItemsLongestLine);
+renderItemsLongestLine();
 
-  let filteredCommits = commits.slice(0, endIndex);
-  let endDateTime = commits[endIndex - 1].datetime
-  let filteredData = data.filter(d => d.datetime <= endDateTime);
-
-  updateCommitInfo(filteredData, filteredCommits); // move this later to scrollytelling 2
-  updateScatterPlot(data, filteredCommits);
-  updateFileInfo(filteredCommits);
-
-
-  itemsContainer.selectAll('div')
-    .data(newCommitSlice)
-    .enter()
+function renderItemsLongestLine() {
+  d3.select('#spacer-2').style('height', (scrollyLongestData.length * ITEM_HEIGHT_2) + 'px');
+  const items = itemsContainer2Sel.selectAll('.item-longest')
+    .data(scrollyLongestData, d => d.id);
+  items.exit().remove();
+  const itemsEnter = items.enter()
     .append('div')
-    .classed('item', true) // use correct CSS class
-    .style('position', 'absolute')
-    .style('top', (_, idx) => `${(startIndex + idx) * ITEM_HEIGHT}px`) // offset properly
-    .each(function(commit, index) {
-      const commitDate = new Date(commit.datetime);
-      const dateStr = commitDate.toLocaleString("en", { dateStyle: "full", timeStyle: "short" });
-      const fileCount = d3.rollups(commit.lines, d => d.length, d => d.file).length;
-      const message = index > 0 ? 'another glorious commit' : 'my first commit, and it was glorious';
+    .attr('class', 'item-longest');
+  itemsEnter.merge(items)
+    .style('top', d => (d._indexLongest * ITEM_HEIGHT_2) + 'px')
+    .html(d => {
+      const dateStr = d.datetime.toLocaleString('en', { dateStyle: 'full', timeStyle: 'short' });
+      return `<div>
+                <strong>${dateStr}</strong>
+                <a href="${d.url}" target="_blank">Open Commit</a>
+              </div>
+              <div>
+                This commit's <strong>longest line</strong> was
+                <em>${d.longestLine} characters</em>!
+                The author <em>${d.author}</em> wrote a record-breaking line.
+              </div>`;
+    });
+  const scrollTop = scrollContainer2Sel.node().scrollTop;
+  const containerHeight = parseFloat(scrollContainer2Sel.style('height'));
+  const centerIndex = Math.round((scrollTop + containerHeight / 2) / ITEM_HEIGHT_2);
+  const clampedIndex = Math.max(0, Math.min(scrollyLongestData.length - 1, centerIndex));
+  const currentCommit = scrollyLongestData[clampedIndex];
+  const filteredLongest = commits.filter(d => d.longestLine <= currentCommit.longestLine);
+  updateFileListLongest(filteredLongest);
+}
 
-      d3.select(this).append('p').html(`
-        On ${dateStr}, I made
-        <a href="${commit.url}" target="_blank">${message}</a>.
-        I edited ${commit.totalLines} lines across ${fileCount} files.
-        Then I looked over all I had made, and I saw that it was very good.
+function updateFileListLongest(filteredCommits) {
+  const lines = filteredCommits.flatMap(d => d.lines);
+  const fileGroups = d3.groups(lines, d => d.file);
+  const filesData = fileGroups.map(([file, lines]) => ({ file, lines }));
+  filesData.sort((a, b) => d3.descending(a.lines.length, b.lines.length));
+  d3.select('#files-longest').html('');
+  d3.select('#files-longest')
+    .selectAll('dl')
+    .data(filesData, d => d.file)
+    .join('dl')
+    .each(function(d) {
+      const sel = d3.select(this);
+      sel.append('dt').html(`
+        <code>${d.file}</code>
+        <small>${d.lines.length} lines</small>
       `);
+      const dd = sel.append('dd');
+      dd.selectAll('div.line')
+        .data(d.lines)
+        .join('div')
+        .attr('class', 'line')
+        .style('background', line => lineColor(line.type));
     });
 }
