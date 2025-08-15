@@ -1,6 +1,13 @@
 [
     {
       "title": "Personalized AI Health Insights",
+      "year": "2025",
+      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "description": "Full-stack personalized music recommender using MERN stack.",
+      "link": "https://github.com/suchitbhayani/spotify-tracker"
+    },
+    {
+      "title": "Personalized AI Health Insights",
       "year": "2024",
       "image": "../images/apple_watch.png",
       "description": "Using Apple Watch data to provide users personalized health metrics and insights.",
