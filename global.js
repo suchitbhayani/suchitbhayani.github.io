@@ -1,9 +1,8 @@
 // nav bar 
 let pages = [
     { url: '', title: 'Home'},
-    { url: 'https://username.github.io/resume.pdf', title: 'Projects'},
-    { url: 'resume/', title: 'Resume'},
-    { url: 'contact/', title: 'Contact'},
+    { url: 'projects/', title: 'Projects'},
+    { url: 'https://suchitbhayani.github.io/resume.pdf', title: 'Resume'},
     { url: 'meta/', title: 'Meta'},
     { url: 'https://github.com/suchitbhayani/', title: 'GitHub'}
 ];
