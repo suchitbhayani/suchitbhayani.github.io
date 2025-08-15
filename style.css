@@ -457,13 +457,13 @@ circle.selected {
     margin-top: 1em;
 }
 /* For scrollytelling unit visualization items */
-/* .line {
+.line {
   display: flex;
   width: 0.5em;
   aspect-ratio: 1;
   background: steelblue;
-  border-radius: 50%; 
-} */
+  border-radius: 50%;
+}
 
 dd {
     display: flex;
