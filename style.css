@@ -567,3 +567,51 @@ dd {
     overflow-y: auto;
     max-height: 80vh;
 }
+
+/* home page styling */
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* space between image/buttons and text */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers both image and buttons */
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid black;
+    object-fit: cover;
+}
+
+.profile-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* centers buttons under the image */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+.profile-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}

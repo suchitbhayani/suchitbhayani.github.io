@@ -4,8 +4,6 @@ let pages = [
     { url: 'projects/', title: 'Projects'},
     { url: 'https://suchitbhayani.github.io/lib/resume.pdf', title: 'Resume'},
     { url: 'meta/', title: 'Meta'},
-    { url: 'https://github.com/suchitbhayani/', title: 'GitHub'},
-    { url: 'https://www.linkedin.com/in/suchit-bhayani/', title: 'LinkedIn'}
 ];
 
 let nav = document.createElement('nav');
