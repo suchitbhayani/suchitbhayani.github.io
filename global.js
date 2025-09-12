@@ -1,7 +1,7 @@
 // nav bar 
 let pages = [
     { url: '', title: 'Home'},
-    { url: 'https://suchitbhayani.github.io/lib/resume.pdf', title: 'Resume'},
+    { url: 'https://suchitbhayani.github.io/lib/Suchit_Bhayani_resume.pdf', title: 'Resume'},
     { url: 'projects/', title: 'Projects'},
     { url: 'meta/', title: 'Meta'},
 ];
