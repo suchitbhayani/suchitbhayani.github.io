@@ -28,6 +28,13 @@
       "link": "https://github.com/CarterT27/FASTER"
     },
     {
+      "title": "Personal Website",
+      "year": "2025",
+      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "description": "Making this website.",
+      "link": "https://github.com/suchitbhayani/suchitbhayani.github.io"
+    },
+    {
       "title": "Recipe Recommender System",
       "year": "2024",
       "image": "../images/recipe.png",
