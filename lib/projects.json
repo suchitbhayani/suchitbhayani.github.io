@@ -1,8 +1,15 @@
 [
     {
+      "title": "Stem Cell Analysis and Visualization",
+      "year": "2025",
+      "image": "../images/HSC_viz.png",
+      "description": "Regression and correlation analysis, visualization of hematopoietic stem cell data. With Li Lab.",
+      "link": "https://suchitbhayani.github.io/HSC-visualizations/"
+    },
+    {
       "title": "Music Recommender System",
       "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/music.png",
       "description": "Full-stack music recommender.",
       "link": "https://github.com/suchitbhayani/spotify-tracker"
     },
@@ -42,11 +49,18 @@
       "link": "https://github.com/suchitbhayani/Psychtweets"
     },
     {
+      "title": "Differential Gene Expression",
+      "year": "2024",
+      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "description": "Time series differential gene expression analysis to identify biologically significant gene clusters. With Li Lab.",
+      "link": "https://github.com/suchitbhayani/differential-gene-analysis"
+    },
+    {
       "title": "Bikewatching",
       "year": "2025",
       "image": "https://vis-society.github.io/labs/2/images/empty.svg",
       "description": "Data visualization of bikers in the greater Boston area.",
-      "link": "https://github.com/suchitbhayani/bikewatching"
+      "link": "https://suchitbhayani.github.io/bikewatching/"
     },
     {
       "title": "Medical Insurance Cost Modeling",
