@@ -30,7 +30,7 @@
     {
       "title": "Personal Website",
       "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "image": "../images/webdev.png",
       "description": "Making this website.",
       "link": "https://github.com/suchitbhayani/suchitbhayani.github.io"
     },
