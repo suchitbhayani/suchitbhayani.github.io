@@ -1,5 +1,12 @@
 [
     {
+      "title": "AI for Drug Discovery",
+      "year": "2025",
+      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+      "description": "Integrating LLMs to analyze patient-doctor dialogues and PubMed literature for Alzheimer’s drug repurposing. DSC 180A capstone project",
+      "link": "https://github.com/suchitbhayani/AI-drug-discovery"
+    },
+    {
       "title": "Stem Cell Analysis and Visualization",
       "year": "2025",
       "image": "../images/HSC_viz.png",
