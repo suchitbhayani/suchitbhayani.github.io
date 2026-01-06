@@ -586,7 +586,7 @@ dd {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 5px solid black;
+    border: 2px solid black;
     object-fit: cover;
 }
 
