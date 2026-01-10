@@ -44,6 +44,7 @@ document.body.insertAdjacentHTML(
         </label>`
 );
 
+// selection
 let select = document.querySelector('select');
 
 if ('colorScheme' in localStorage) {
@@ -57,6 +58,44 @@ select.addEventListener('input', function (event) {
     document.documentElement.style.setProperty('color-scheme', scheme);
     localStorage.colorScheme = scheme;
 });
+
+// experiences
+let experience = document.querySelector('.experience')
+async function loadExperiences() {
+  try {
+    // 1. Fetch the file
+    const response = await fetch('./lib/experiences.json');
+    
+    // 2. Check if the file exists/is accessible
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    // 3. Convert the response to JSON
+    const data = await response.json();
+
+    // 4. Map the data to HTML strings and join them
+    const htmlContent = data.map(item => `
+        <div class="exp-item">
+            <div class="company">${item.company}</div>
+            <div class="position">${item.position}</div>
+            <div class="duration">
+                ${item.start}${item.end ? ` - ${item.end}` : ''}
+            </div>
+        </div>
+    `).join('');
+
+    // 5. Update the DOM once
+    experience.innerHTML = htmlContent;
+
+  } catch (error) {
+    console.error("Could not fetch experiences:", error);
+    experience.innerHTML = "<p>Failed to load experience data.</p>";
+  }
+}
+
+// Call the function
+loadExperiences();
 
 
 // functions for projects page

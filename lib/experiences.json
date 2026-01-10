@@ -1,0 +1,38 @@
+[
+    {
+        "company": "Nike",
+        "position": "Machine Learning Engineer",
+        "start": "Incoming Summer 2026",
+        "end": ""
+    },
+    {
+        "company": "UC San Diego Health",
+        "position": "Data Science Intern",
+        "start": "October 2025",
+        "end": "Present"
+    },
+    {
+        "company": "UC San Diego",
+        "position": "Teaching Assistant",
+        "start": "January 2025",
+        "end": "Present"
+    },
+    {
+        "company": "Nike",
+        "position": "Data and Machine Learning Engineer Intern",
+        "start": "June 2025",
+        "end": "August 2025"
+    },
+    {
+        "company": "Li Lab",
+        "position": "Machine Learning Researcher",
+        "start": "October 2024",
+        "end": "June 2025"
+    },
+    {
+        "company": "Digital Prudentia",
+        "position": "Data Science Intern",
+        "start": "June 2024",
+        "end": "September 2024"
+    }
+]

@@ -615,3 +615,46 @@ dd {
     font-size: 1.2rem;
     line-height: 1.5;
 }
+
+/* Container spacing */
+.experience {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean sans-serif */
+  color: #333;
+}
+
+.exp-item {
+  margin-bottom: 24px; /* Space between each job block */
+}
+
+.company {
+  font-weight: 700;    /* Bold company name */
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.position {
+  font-weight: 400;    /* Regular weight for position */
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2px;
+}
+
+.duration {
+  font-style: italic;  /* Italicized dates */
+  font-weight: 300;
+  color: #555;
+}
+
+/* Add space above and below your sections */
+.section-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+#title {
+    font-size: 2rem; /* Adjust this value to your liking (e.g., 32px, 3rem) */
+    font-weight: bold;
+    margin-bottom: 20px; /* Replaces the <br> for better spacing */
+    color: #222;        /* Optional: darkens the text for a cleaner look */
+}
