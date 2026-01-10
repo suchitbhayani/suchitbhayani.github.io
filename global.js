@@ -3,7 +3,7 @@ let pages = [
     { url: '', title: 'Home'},
     { url: 'https://suchitbhayani.github.io/lib/Suchit_Bhayani_resume.pdf', title: 'Resume'},
     { url: 'projects/', title: 'Projects'},
-    { url: 'meta/', title: 'Meta'},
+    // { url: 'meta/', title: 'Meta'},
 ];
 
 let nav = document.createElement('nav');
