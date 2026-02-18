@@ -1,93 +1,100 @@
 [
-    {
-      "title": "AI for Drug Discovery",
-      "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Analyzing patient-doctor dialogues and PubMed literature for drug repurposing. DSC 180A project.",
-      "link": "https://github.com/suchitbhayani/AI-drug-discovery"
-    },
-    {
-      "title": "Stem Cell Analysis and Visualization",
-      "year": "2025",
-      "image": "../images/HSC_viz.png",
-      "description": "Regression and correlation analysis, visualization of hematopoietic stem cell data. With Li Lab.",
-      "link": "https://suchitbhayani.github.io/HSC-visualizations/"
-    },
-    {
-      "title": "Music Recommender System",
-      "year": "2025",
-      "image": "../images/music.png",
-      "description": "Full-stack music recommender.",
-      "link": "https://github.com/suchitbhayani/spotify-tracker"
-    },
-    {
-      "title": "Personalized AI Health Insights",
-      "year": "2024",
-      "image": "../images/apple_watch.png",
-      "description": "Using Apple Watch data to provide users personalized health metrics and insights.",
-      "link": "https://github.com/CarterT27/Apple-Watch-Personalized-Health-Insights"
-    },
-    {
-      "title": "Automated Feature Engineering",
-      "year": "2025",
-      "image": "../images/feature_engineering.png",
-      "description": "Leveraging LLMs to fully automate the process of feature engineering and selection.",
-      "link": "https://github.com/CarterT27/FASTER"
-    },
-    {
-      "title": "Personal Website",
-      "year": "2025",
-      "image": "../images/webdev.png",
-      "description": "Making this website.",
-      "link": "https://github.com/suchitbhayani/suchitbhayani.github.io"
-    },
-    {
-      "title": "Recipe Recommender System",
-      "year": "2024",
-      "image": "../images/recipe.png",
-      "description": "Classifier and recommender system for personalized recipe suggestions.",
-      "link": "https://ryancao2005.github.io/Recipe-Recommender-System/"
-    },
-    {
-      "title": "Language Modeling",
-      "year": "2024",
-      "image": "../images/language_modeling.png",
-      "description": "Text generation using probabilistic language models.",
-      "link": "https://github.com/suchitbhayani/Language-Modeling"
-    },
-    {
-      "title": "Psychtweets",
-      "year": "2024",
-      "image": "../images/psychtweets.png",
-      "description": "Deep neural network to predict user MBTI type from their tweets.",
-      "link": "https://github.com/suchitbhayani/Psychtweets"
-    },
-    {
-      "title": "Differential Gene Expression",
-      "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Time series differential gene expression analysis to identify biologically significant gene clusters. With Li Lab.",
-      "link": "https://github.com/suchitbhayani/differential-gene-analysis"
-    },
-    {
-      "title": "Bikewatching",
-      "year": "2025",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Data visualization of bikers in the greater Boston area.",
-      "link": "https://suchitbhayani.github.io/bikewatching/"
-    },
-    {
-      "title": "Medical Insurance Cost Modeling",
-      "year": "2024",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "  ML model to predict health insurance costs.",
-      "link": "https://github.com/suchitbhayani/Medical-Insurance-Cost"
-    },
-    {
-      "title": "LeBron vs. Jordan",
-      "year": "2023",
-      "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-      "description": "Using data science and statistics to settle the NBA GOAT debate.",
-      "link": "https://github.com/suchitbhayani/LeBron-and-Jordan-Playoff-vs.-Regular-Season-Performance-Analysis"
-    }
-  ]
+  {
+    "title": "Graph Learning for Pralsetinib Off-Target Prediction",
+    "year": "2026",
+    "image": "../images/pharmacy.png",
+    "description": "Biomedical KG construction and Graph Neural Networks for drug off-target prediction. UCSD Senior capstone (DSC 180B) project.",
+    "link": "https://github.com/Ishaanbal/DSC180B-B23-Knowledge-Graph-and-Biomedical-Ontology/tree/main"
+  },
+  {
+    "title": "Music Recommender System",
+    "year": "2025",
+    "image": "../images/music.png",
+    "description": "Full-stack music recommender.",
+    "link": "https://github.com/suchitbhayani/spotify-tracker"
+  },
+  {
+    "title": "Stem Cell Analysis and Visualization",
+    "year": "2025",
+    "image": "../images/HSC_viz.png",
+    "description": "Regression and correlation analysis, visualization of hematopoietic stem cell data. With Li Lab.",
+    "link": "https://suchitbhayani.github.io/HSC-visualizations/"
+  },
+  {
+    "title": "AI for Drug Discovery",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Analyzing patient-doctor dialogues and PubMed literature to generate structured data for drug repurposing. UCSD Senior capstone (DSC 180A) project.",
+    "link": "https://github.com/suchitbhayani/AI-drug-discovery"
+  },
+  {
+    "title": "Personalized AI Health Insights",
+    "year": "2024",
+    "image": "../images/apple_watch.png",
+    "description": "Using Apple Watch data to provide users personalized health metrics and insights.",
+    "link": "https://github.com/CarterT27/Apple-Watch-Personalized-Health-Insights"
+  },
+  {
+    "title": "Automated Feature Engineering",
+    "year": "2025",
+    "image": "../images/feature_engineering.png",
+    "description": "Leveraging LLMs to fully automate the process of feature engineering and selection.",
+    "link": "https://github.com/CarterT27/FASTER"
+  },
+  {
+    "title": "Personal Website",
+    "year": "2025",
+    "image": "../images/webdev.png",
+    "description": "Making this website.",
+    "link": "https://github.com/suchitbhayani/suchitbhayani.github.io"
+  },
+  {
+    "title": "Recipe Recommender System",
+    "year": "2024",
+    "image": "../images/recipe.png",
+    "description": "Classifier and recommender system for personalized recipe suggestions.",
+    "link": "https://ryancao2005.github.io/Recipe-Recommender-System/"
+  },
+  {
+    "title": "Language Modeling",
+    "year": "2024",
+    "image": "../images/language_modeling.png",
+    "description": "Text generation using probabilistic language models.",
+    "link": "https://github.com/suchitbhayani/Language-Modeling"
+  },
+  {
+    "title": "Psychtweets",
+    "year": "2024",
+    "image": "../images/psychtweets.png",
+    "description": "Deep neural network to predict user MBTI type from their tweets.",
+    "link": "https://github.com/suchitbhayani/Psychtweets"
+  },
+  {
+    "title": "Differential Gene Expression",
+    "year": "2024",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Time series differential gene expression analysis to identify biologically significant gene clusters. With Li Lab.",
+    "link": "https://github.com/suchitbhayani/differential-gene-analysis"
+  },
+  {
+    "title": "Bikewatching",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Data visualization of bikers in the greater Boston area.",
+    "link": "https://suchitbhayani.github.io/bikewatching/"
+  },
+  {
+    "title": "Medical Insurance Cost Modeling",
+    "year": "2024",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "  ML model to predict health insurance costs.",
+    "link": "https://github.com/suchitbhayani/Medical-Insurance-Cost"
+  },
+  {
+    "title": "LeBron vs. Jordan",
+    "year": "2023",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Using data science and statistics to settle the NBA GOAT debate.",
+    "link": "https://github.com/suchitbhayani/LeBron-and-Jordan-Playoff-vs.-Regular-Season-Performance-Analysis"
+  }
+]
