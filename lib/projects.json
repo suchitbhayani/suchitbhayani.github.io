@@ -3,7 +3,7 @@
     "title": "Graph Learning for Drug Off-Target Prediction",
     "year": "2026",
     "image": "../images/pharmacy.png",
-    "description": "Biomedical KG construction and Graph Neural Networks for Pralsetinib off-target prediction. UCSD Senior capstone (DSC 180B) project.",
+    "description": "Biomedical KG construction and GNNs for Pralsetinib off-target prediction. UCSD Senior capstone (DSC 180B) project.",
     "link": "https://github.com/Ishaanbal/DSC180B-B23-Knowledge-Graph-and-Biomedical-Ontology/tree/main"
   },
   {
